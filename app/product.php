@@ -12,6 +12,9 @@ class product extends Model
    return $this->belongsTo('App\User', 'user_id');
  }
 
+ public function photos(){
+     return $this->hasMany('App\ImagesProducts', 'product_id');
+   }
 
 
 }

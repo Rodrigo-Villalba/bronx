@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\productImages;
+use App\ImagesProducts;
 use Illuminate\Http\Request;
 
-class ProductImagesController extends Controller
+class ImagesProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ProductImagesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\productImages  $productImages
+     * @param  \App\ImagesProducts  $imagesProducts
      * @return \Illuminate\Http\Response
      */
-    public function show(productImages $productImages)
+    public function show(ImagesProducts $imagesProducts)
     {
         //
     }
@@ -52,10 +52,10 @@ class ProductImagesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\productImages  $productImages
+     * @param  \App\ImagesProducts  $imagesProducts
      * @return \Illuminate\Http\Response
      */
-    public function edit(productImages $productImages)
+    public function edit(ImagesProducts $imagesProducts)
     {
         //
     }
@@ -64,10 +64,10 @@ class ProductImagesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\productImages  $productImages
+     * @param  \App\ImagesProducts  $imagesProducts
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, productImages $productImages)
+    public function update(Request $request, ImagesProducts $imagesProducts)
     {
         //
     }
@@ -75,10 +75,10 @@ class ProductImagesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\productImages  $productImages
+     * @param  \App\ImagesProducts  $imagesProducts
      * @return \Illuminate\Http\Response
      */
-    public function destroy(productImages $productImages)
+    public function destroy(ImagesProducts $imagesProducts)
     {
         //
     }
