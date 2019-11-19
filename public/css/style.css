@@ -1,0 +1,86 @@
+body {
+  background: #fff;
+}
+
+.logogif {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+.cuadrado {
+  background-color: #fff;
+}
+
+.carousel {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 29.8%;
+}
+
+ul  {
+  list-style-type: none;
+}
+
+.banner {
+  height: 300px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+
+/*clases productos*/
+.photo-container{
+  position: relative;
+
+}
+.photo{
+  width: 100%;
+  margin-left: 20%;
+}
+.product{
+    width:50%;
+    float:left;
+    box-sizing: border-box;
+  }
+  .vip-products{
+    overflow: hidden;
+  }
+  .photo-container {
+  height: 400px;
+  width: 400px;
+
+  }
+  .texto {
+    text-align: center;
+  }
+/* hasta aca es lo de productos*/
+
+
+.social-media {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.social-media a {
+  font-size: 30px;
+  color: black;
+  padding: 20px;
+  background-color: #fff;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.bienvenido {
+  margin-left: 380%;
+}

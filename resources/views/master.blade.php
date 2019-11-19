@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="/public/css/style.css" rel="stylesheet">
     <meta charset="utf-8">
     <title></title>
   </head>
@@ -21,7 +22,7 @@
               <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="register.php">REGISTER</a>
+              <a class="nav-link" href="register.blade.php">REGISTER</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="login.blade.php">LOGIN</a>
