@@ -11,7 +11,15 @@
 |
 */
 Auth::routes();
+Route::get('/', function(){
+  return view("home");
+});
+Route::get('/login', function(){
+  return view("login");
+});
+Route::get('/register', function(){
+  return view("register");
+});
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/product/{product}', 'ProductController@show');
-// Route::get('/register', 'RegistrerController@show');
+//Route::get('/', 'HomeController@index')->name('home');
+//Route::get('/product/{product}', 'ProductController@show');
