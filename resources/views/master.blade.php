@@ -3,13 +3,13 @@
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link href="/public/css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
    <div class="container">
-      
+
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <img id="comp-jadduam9imgimage" style="object-position: 50% 50%; width: 195px; height: 54px; object-fit: cover;" alt="" data-type="image" itemprop="image"
           src="https://static.wixstatic.com/media/36efdc_5a49fbf9400e46bcaa1f89c065243e3b~mv2.png/v1/fill/w_390,h_108,al_c,q_80,usm_0.66_1.00_0.01/36efdc_5a49fbf9400e46bcaa1f89c065243e3b~mv2.webp">
@@ -22,10 +22,10 @@
               <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="register.blade.php">REGISTER</a>
+              <a class="nav-link" href="register">REGISTER</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.blade.php">LOGIN</a>
+              <a class="nav-link" href="login">LOGIN</a>
             </li>
             </li>
             <li>
@@ -52,16 +52,16 @@
           </ul>
         </div>
       </nav>
-  
+
       <div class="cuadrado">
 
-        
+
 @yield ("content")
 
         <!-- hasta aca van los productos-->
 
         <!-- Footer -->
-       
+
         <footer class="page-footer font-small stylish-color-dark pt-4">
           <!-- Footer Links -->
           <div class="container text-center">
