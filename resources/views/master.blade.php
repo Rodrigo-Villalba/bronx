@@ -22,14 +22,14 @@
               <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/register">REGISTER</a>
+              <a class="nav-link" href="register">REGISTER</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="login">LOGIN</a>
             </li>
             </li>
             <li>
-              <a class="nav-link" href="logout.php">LOG OUT</a>
+              <a class="nav-link" href="logout">LOG OUT</a>
             </li>
 
             <li class="nav-item dropdown">
