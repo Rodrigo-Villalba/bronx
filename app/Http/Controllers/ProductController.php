@@ -14,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-      //
+      $products = Product::All();
+      return view('productos')->with('products', $products);
     }
 
     /**
@@ -44,11 +45,11 @@ class ProductController extends Controller
      * @param  \App\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-       $productDetail = Product::find($product->id);
+       $productDetail = Product::find($id);
 
-       return view('product', compact('productDetail'));
+       return view('productDetalle', compact('productDetail'));
     }
 
     /**

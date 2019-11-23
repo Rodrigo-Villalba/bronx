@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <meta charset="utf-8">
     <title></title>
   </head>
@@ -19,19 +19,29 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ route('home') }}">HOME <span class="sr-only">(current)</span></a>
             </li>
+            @guest
             <li class="nav-item">
-              <a class="nav-link" href="register">REGISTER</a>
+              <a class="nav-link" href="{{ route('register') }}">REGISTER</a>
             </li>
+            @endguest
+            @guest
             <li class="nav-item">
-              <a class="nav-link" href="login">LOGIN</a>
+              <a class="nav-link" href="{{ route('login') }}">LOGIN</a>
             </li>
             </li>
+          @endguest
+          @auth
             <li>
-              <a class="nav-link" href="logout">LOG OUT</a>
+              <a class="nav-link" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">LOG OUT</a>
             </li>
-
+            <form id='logout-form' action="{{ route('logout')}}" method='POST' style='display: none;'>
+              @csrf
+            </form>
+          @endauth
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 PRODUCTOS
@@ -46,9 +56,11 @@
                 <a class="dropdown-item" href="#">Baño</a>
               </div>
             </li>
+            @auth
             <li class="navbar-text">
-              <p class="bienvenido">Bienvenido</p>
+              <p class="bienvenido">Bienvenido <span> {{ Auth::user()->name }}</p>
             </li>
+          @endauth
           </ul>
         </div>
       </nav>
@@ -140,9 +152,9 @@
         </footer>
         <div class="">
           <ul class="social-media">
-            <li><a href="#"><span class="ion-social-facebook"></span></a></li>
-            <li><a href="#"><span class="ion-social-twitter"></span></a></li>
-            <li><a href="#"><span class="ion-social-instagram"></span></a></li>
+            <li><a href="https://www.facebook.com/bronxdecor/"><span class="ion-social-facebook"></span></a></li>
+            <li><a href="https://twitter.com/"><span class="ion-social-twitter"></span></a></li>
+            <li><a href="https://www.instagram.com/bronx_decor/?fbclid=IwAR0r3GClcPc-rxjnVWyIJIoRUqS5-Wtm55F9g06ZytY2Id3fkPCc1BJhQRc"><span class="ion-social-instagram"></span></a></li>
           </ul>
         </div>
       </div>

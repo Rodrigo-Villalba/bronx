@@ -16,8 +16,11 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/product/{product}', 'ProductController@show');
+Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/register', 'RegisterController@index')->name('register');
+
+Route::get('/productos', 'ProductController@index');
+Route::get('/productos/{id}', 'ProductController@show');
 //Route::post('/addtocart', 'CartController@store');
 //Route::get('/cart', 'CartController@index')->middleware('auth');
 //Route::post('/cartclose', 'CartController@cartclose');

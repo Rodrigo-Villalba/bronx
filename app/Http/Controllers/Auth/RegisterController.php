@@ -46,6 +46,11 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+     protected function index() {
+       return view('register');
+     }
+
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
