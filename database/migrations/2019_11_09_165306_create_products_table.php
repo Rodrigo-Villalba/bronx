@@ -25,7 +25,7 @@ class CreateProductsTable extends Migration
 
             $table->string('featured_img', 300);
             $table->timestamps();
-
+            $table->integer('stock');
             $table->foreign('user_id')
             ->references('id')->on('users');
         });

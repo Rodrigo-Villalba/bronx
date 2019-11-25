@@ -51,7 +51,7 @@ class CartController extends Controller
         $item->status = 0; //producto no comprado.
 
         $item->save();
-        return redirect('home');
+        return redirect('/');
     }
 
     /**
@@ -111,19 +111,19 @@ class CartController extends Controller
         $item->save();
       }
 
-      return redirect('home');
+      return redirect('/');
 
     }
 
-    // public function history(){
-    //   $carts = Cart::where('user_id', Auth::user()->id)
-    //                 ->where("status",1)->get()
-    //                 ->groupBy('cart_number'); //todos los nros de carrito del usuario.
-    //
-    //   return view('history', compact('carts'));
-    //
-    //
-    // }
+    public function history(){
+      $carts = Cart::where('user_id', Auth::user()->id)
+                    ->where("status",1)->get()
+                    ->groupBy('cart_number'); //todos los nros de carrito del usuario.
+
+      return view('history', compact('carts'));
+
+
+    }
 
 
 

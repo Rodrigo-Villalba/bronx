@@ -28,4 +28,6 @@ Route::post('/cartclose', 'CartController@cartclose');
 
 Route::get('/productos/{id}', 'ProductController@show');
 
+Route::get('/history', 'CartController@history')->middleware('auth');
+
 Route::get('/admin', 'AdminController@index')->middleware('auth')->middleware('roles');
