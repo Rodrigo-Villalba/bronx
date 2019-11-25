@@ -167,7 +167,7 @@
       <th scope="row">2</th>
       <td>Jacob</td>
       <td>Thornton</td>
-      <td>@fat</td>
+      <td></td>
       <td>
       <img src="\storage\products\zetaperfo.jpg" width="50">
       </td>
@@ -203,7 +203,7 @@
       <th scope="row">2</th>
       <td>Jacob</td>
       <td>Thornton</td>
-      <td>@fat</td>
+      <td></td>
       <td>
       <img src="\storage\products\DSC02168.jpg" width="50">
       </td>

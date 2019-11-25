@@ -41,14 +41,17 @@
             <form id='logout-form' action="{{ route('logout')}}" method='POST' style='display: none;'>
               @csrf
             </form>
+            @if (auth()->check() && Auth::user()->rol == 1)
+
+              <li class = "nav-item">
+                <a href="/admin" class="nav-link">ADMIN</a>
+              </li>
+            @endif
           @endauth
             <li class = "nav-item">
               <a href="/cart" class="nav-link">CARRITO</a>
             </li>
 
-            <li class = "nav-item">
-             <a href="/admin" class="nav-link">ADMIN</a>
-            </li>
 
 
             <li class="nav-item dropdown">

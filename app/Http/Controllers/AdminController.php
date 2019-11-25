@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Auth;
 
 use Illuminate\Http\Request;
 
@@ -13,6 +14,10 @@ class AdminController extends Controller
      */
     public function index()
     {
+      // dd('HOLA');
+        abort_if(auth()->guest() || auth()->user()->rol != 1, 500);
+
+
         return view('/admin');
     }
 
