@@ -42,18 +42,24 @@
               @csrf
             </form>
           @endauth
+            <li class = "nav-item">
+              <a href="/cart" class="nav-link">CARRITO</a>
+            </li>
+            <li class = "nav-item">
+              <a href="/admin" class="nav-link">ADMIN</a>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 PRODUCTOS
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Living</a>
+                <a class="dropdown-item" href="productos">Living</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Comedor</a>
+                <a class="dropdown-item" href="productos">Comedor</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Dormitorio</a>
+                <a class="dropdown-item" href="productos">Dormitorio</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Baño</a>
+                <a class="dropdown-item" href="productos">Baño</a>
               </div>
             </li>
             @auth
