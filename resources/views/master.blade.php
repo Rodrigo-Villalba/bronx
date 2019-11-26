@@ -33,11 +33,7 @@
             </li>
           @endguest
           @auth
-            <li>
-              <a class="nav-link" href="{{ route('logout') }}"
-              onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();">LOG OUT</a>
-            </li>
+
             <form id='logout-form' action="{{ route('logout')}}" method='POST' style='display: none;'>
               @csrf
             </form>
@@ -48,9 +44,7 @@
               </li>
             @endif
           @endauth
-            <li class = "nav-item">
-              <a href="/cart" class="nav-link">CARRITO</a>
-            </li>
+
 
 
 
@@ -70,7 +64,13 @@
             </li>
             @auth
             <li class="navbar-text">
-              <p class="bienvenido">Bienvenido <span> {{ Auth::user()->name }}</p>
+              <p style="margin-left:200px" class="bienvenido">Bienvenido <span> {{ Auth::user()->name }}</p>
+            </li>
+
+            <li>
+              <a style="margin-left:100px" class="nav-link" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">LOG OUT</a>
             </li>
           @endauth
           </ul>
