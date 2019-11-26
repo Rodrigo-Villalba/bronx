@@ -26,29 +26,21 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="{{ route('home') }}">HOME <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
             </li>
-
-
-          @auth
-
+           @auth
             <form id='logout-form' action="{{ route('logout')}}" method='POST' style='display: none;'>
               @csrf
             </form>
             @if (auth()->check() && Auth::user()->rol == 1)
-
-              <li class = "nav-item">
-                <a href="/admin" class="nav-link">ADMIN</a>
-              </li>
+            <li class = "nav-item">
+              <a href="/admin" class="nav-link">Administrador</a>
+            </li>
             @endif
-          @endauth
-
-
-
-
+            @endauth
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                PRODUCTOS
+                Productos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="productos">Sillas</a>
@@ -61,34 +53,33 @@
               </div>
             </li>
             <li class = "nav-item">
-              <a href="/cart" class="nav-link">CARRITO</a>
+              <a href="/cart" class="nav-link">Compras</a>
             </li>
             @auth
             <li class="navbar-text">
-              <p style="margin-left:300px" class="bienvenido">Bienvenido <span>   {{ Auth::user()->name }}</p>
+              <p style="margin-left:300px" class="bienvenido">Bienvenido <span> {{ Auth::user()->name }}</p>
             </li>
 
-            <li style="margin-left:10px" class = "nav-item">
-            <a href="/cart" class="nav-link">
+            {{-- <li style="" class = "nav-item">
+             <a href="/cart" class="nav-link">
             <ion-icon ios="ios-cart" md="md-cart"> </ion-icon>
-           </a>
-
-            </li>
+             </a>
+            </li> --}}
             <li>
               <a  class="nav-link" href="{{ route('logout') }}"
               onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();">LOG OUT</a>
+              document.getElementById('logout-form').submit();">Log Out</a>
             </li>
           @endauth
           @guest
             <li style="margin-left:500px" class="nav-item">
-              <a class="nav-link" href="{{ route('login') }}">LOGIN</a>
+              <a class="nav-link" href="{{ route('login') }}">Login</a>
             </li>
             </li>
           @endguest
           @guest
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('register') }}">REGISTER</a>
+              <a class="nav-link" href="{{ route('register') }}">Register</a>
             </li>
             @endguest
           </ul>
