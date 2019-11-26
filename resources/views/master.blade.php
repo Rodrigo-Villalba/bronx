@@ -66,7 +66,9 @@
             <li class="navbar-text">
               <p style="margin-left:200px" class="bienvenido">Bienvenido <span> {{ Auth::user()->name }}</p>
             </li>
-
+            <li class = "nav-item">
+              <a href="/cart" class="nav-link">CARRITO</a>
+            </li>
             <li>
               <a style="margin-left:100px" class="nav-link" href="{{ route('logout') }}"
               onclick="event.preventDefault();
