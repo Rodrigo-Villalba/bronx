@@ -16,7 +16,7 @@
       <h3>{{$productDetail->name}}</h3>
       <p>{{$productDetail->description}}</p>
       <p>Precio: {{$productDetail->price}}</p>
-      <a href="" class="btn btn-success">Agregar al carrito</a>
+      <a href="/cart" class="btn btn-success">Agregar al carrito</a>
     </article>
 </div>
 @endsection
