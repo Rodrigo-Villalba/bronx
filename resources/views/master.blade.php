@@ -5,6 +5,13 @@
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <meta charset="utf-8">
+
+      <!-- ESTO ES PARA ICONOS -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+
+    <!-- //////////////// -->
     <title></title>
   </head>
   <body>
@@ -21,17 +28,8 @@
             <li class="nav-item active">
               <a class="nav-link" href="{{ route('home') }}">HOME <span class="sr-only">(current)</span></a>
             </li>
-            @guest
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('register') }}">REGISTER</a>
-            </li>
-            @endguest
-            @guest
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('login') }}">LOGIN</a>
-            </li>
-            </li>
-          @endguest
+
+
           @auth
 
             <form id='logout-form' action="{{ route('logout')}}" method='POST' style='display: none;'>
@@ -64,15 +62,32 @@
             </li>
             @auth
             <li class="navbar-text">
-              <p style="margin-left:200px" class="bienvenido">Bienvenido <span> {{ Auth::user()->name }}</p>
+              <p style="margin-left:300px" class="bienvenido">Bienvenido <span>   {{ Auth::user()->name }}</p>
             </li>
 
+            <li style="margin-left:10px" class = "nav-item">
+            <a href="/cart" class="nav-link">
+            <ion-icon ios="ios-cart" md="md-cart"> </ion-icon> 
+           </a>
+              
+            </li>
             <li>
-              <a style="margin-left:100px" class="nav-link" href="{{ route('logout') }}"
+              <a  class="nav-link" href="{{ route('logout') }}"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">LOG OUT</a>
             </li>
           @endauth
+          @guest
+            <li style="margin-left:500px" class="nav-item">
+              <a class="nav-link" href="{{ route('login') }}">LOGIN</a>
+            </li>
+            </li>
+          @endguest
+          @guest
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('register') }}">REGISTER</a>
+            </li>
+            @endguest
           </ul>
         </div>
       </nav>
