@@ -23,9 +23,23 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+      $product = new Product;
+
+      $product->name = $request->name;
+      $product->description = $request->description;
+      $product->price = $request->description;
+      $product->user_id = $request->user_id;
+      $product->featured_img = $request->featured_img;
+      $product->created_at = $request->created_at;
+      $product->updated_at = $request->updated_at;
+      $product->stock = $request->stock;
+
+
+      $product->save();
+
+      return redirect('/productos');
     }
 
     /**
@@ -36,7 +50,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

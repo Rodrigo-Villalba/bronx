@@ -6,7 +6,7 @@
 
   <p>hola administradores</p>
 
- <button class = "dropdown-quantity-item selected" name="button">Agregar Producto</button>
+ <button href="/formulario" class = "dropdown-quantity-item selected" name="button">Agregar Producto</button>
 
   <table class="table table-striped">
   <thead>

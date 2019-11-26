@@ -31,3 +31,5 @@ Route::get('/productos/{id}', 'ProductController@show');
 Route::get('/history', 'CartController@history')->middleware('auth');
 
 Route::get('/admin', 'AdminController@index')->middleware('auth');
+
+Route::get('/formulario', 'ProductController@create')->middleware('auth');
