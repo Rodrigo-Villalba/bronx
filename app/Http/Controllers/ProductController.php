@@ -32,14 +32,18 @@ class ProductController extends Controller
       $product->price = $request->description;
       $product->user_id = $request->user_id;
       $product->featured_img = $request->featured_img;
-      $product->created_at = $request->created_at;
-      $product->updated_at = $request->updated_at;
-      $product->stock = $request->stock;
+     // $product->created_at = $request->created_at;
+      //$product->updated_at = $request->updated_at;
+     // $product->stock = $request->stock;
 
 
       $product->save();
 
       return redirect('/productos');
+    }
+
+    public function mostrarFormulario(){
+      return view ("formulario");
     }
 
     /**

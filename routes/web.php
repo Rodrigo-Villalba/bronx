@@ -32,4 +32,5 @@ Route::get('/history', 'CartController@history')->middleware('auth');
 
 Route::get('/admin', 'AdminController@index')->middleware('auth');
 
-Route::get('/formulario', 'ProductController@create')->middleware('auth');
+Route::post('/crearProducto', 'ProductController@create')->middleware('auth');
+Route::get('/formularioCarga', 'ProductController@mostrarFormulario')->middleware('auth');
