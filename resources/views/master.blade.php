@@ -60,6 +60,9 @@
                 <a class="dropdown-item" href="productos">Deco</a>
               </div>
             </li>
+            <li class = "nav-item">
+              <a href="/cart" class="nav-link">CARRITO</a>
+            </li>
             @auth
             <li class="navbar-text">
               <p style="margin-left:300px" class="bienvenido">Bienvenido <span>   {{ Auth::user()->name }}</p>
@@ -67,9 +70,9 @@
 
             <li style="margin-left:10px" class = "nav-item">
             <a href="/cart" class="nav-link">
-            <ion-icon ios="ios-cart" md="md-cart"> </ion-icon> 
+            <ion-icon ios="ios-cart" md="md-cart"> </ion-icon>
            </a>
-              
+
             </li>
             <li>
               <a  class="nav-link" href="{{ route('logout') }}"
