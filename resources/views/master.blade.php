@@ -53,7 +53,7 @@
               </div>
             </li>
             <li class = "nav-item">
-              <a href="/cart" class="nav-link">Compras</a>
+              <a href="/cart" class="nav-link">Carrito</a>
             </li>
             @auth
             <li class="navbar-text">
