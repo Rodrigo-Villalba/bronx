@@ -55,6 +55,9 @@
             <li class = "nav-item">
               <a href="/cart" class="nav-link">Carrito</a>
             </li>
+            <li class = "nav-item">
+              <a href="/history" class="nav-link">  Mis compras</a>
+            </li>
             @auth
             <li class="navbar-text">
               <p style="margin-left:300px" class="bienvenido">Bienvenido <span> {{ Auth::user()->name }}</p>
