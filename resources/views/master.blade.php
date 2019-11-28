@@ -52,22 +52,19 @@
                 <a class="dropdown-item" href="productos">Deco</a>
               </div>
             </li>
-            <li class = "nav-item">
-              <a href="/cart" class="nav-link">Carrito</a>
-            </li>
+
+            @auth
             <li class = "nav-item">
               <a href="/history" class="nav-link">  Mis compras</a>
             </li>
-            @auth
+            
             <li class="navbar-text">
-              <p style="margin-left:300px" class="bienvenido">Bienvenido <span> {{ Auth::user()->name }}</p>
+              <p style="margin-left:250px" class="bienvenido">Bienvenido <span> {{ Auth::user()->name }}</p>
             </li>
-
-            {{-- <li style="" class = "nav-item">
-             <a href="/cart" class="nav-link">
-            <ion-icon ios="ios-cart" md="md-cart"> </ion-icon>
-             </a>
-            </li> --}}
+            <li style="margin-left:5px" class = "nav-item">
+              <a href="/cart" class="nav-link">Carrito</a>
+            </li>
+           
             <li>
               <a  class="nav-link" href="{{ route('logout') }}"
               onclick="event.preventDefault();
@@ -75,7 +72,7 @@
             </li>
           @endauth
           @guest
-            <li style="margin-left:450px" class="nav-item">
+            <li style="margin-left:400px" class="nav-item">
               <a class="nav-link" href="{{ route('login') }}">Login</a>
             </li>
             </li>
