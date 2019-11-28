@@ -21,7 +21,7 @@
             <h3>{{$product->name}}</h3>
             <p>{{$product->description}}</p>
             <p>Precio: {{$product->price}}</p>
-            <a href="/productos/{{$product->id}}" class="btn btn-success">Ver más</a>
+            <a href="/productos/{{$product->id}}" class="btn btn-success">Ver producto</a>
           </article>
         @empty
         <p>No hay productos disponibles.</p>

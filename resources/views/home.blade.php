@@ -15,13 +15,13 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="/storage/products/zetaperfo.jpg" class="d-block w-100" alt="img">
+              <img src="/storage/products/mueblesavanna/mueblesavanna.jpg" class="d-block w-100" alt="img">
             </div>
             <div class="carousel-item">
-              <img src="/storage/products/sillon.jpg" class="d-block w-100" alt="img">
+              <img src="/storage/products/sillonfreddy/sillonfreddy.jpg" class="d-block w-100" alt="img">
             </div>
             <div class="carousel-item">
-              <img src="/storage/products/trianglemini.jpg" class="d-block w-100" alt="img">
+              <img src="/storage/products/espejotriangle/espejotriangle.jpg" class="d-block w-100" alt="img">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -37,10 +37,10 @@
         <!-- Fotos decoracion -->
 
         <div class="banner">
-          <img src="/storage/products/DSC02168.jpg" class="img-fluid" alt="Responsive image">
+          <img src="/storage/products/mesarock/mesarock4.jpg" class="img-fluid" alt="Responsive image">
         </div>
         <div class="banner">
-          <img src="/storage/products/DSC02174.jpg" class="img-fluid" alt="Responsive image">
+          <img src="/storage/products/mesarock/mesarock5.jpg" class="img-fluid" alt="Responsive image">
         </div>
 
 
@@ -48,7 +48,7 @@
         <section class="vip-products row">
           <article class="product">
             <div class="photo-container">
-              <img class="photo" src="/storage/products/sillon.jpg" alt="pdto 01">
+              <img class="photo" src="/storage/products/sillonfreddy/sillonfreddy.jpg" alt="pdto 01">
             </div>
             <h2 class="texto">Sillon Freddy</h2>
             <p>Sillón Freddy. Fabricación propia. Elegi medidas, color de base y Medidas: 170 x 85 x 65h cm. Nuestros productos son de fabricación artesanal.
@@ -58,7 +58,7 @@
 
           <article class="product">
             <div class="photo-container">
-              <img class="photo" src="/storage/products/eva.jpg" alt="pdto 02">
+              <img class="photo" src="/storage/products/recibidoreva/eva.jpg" alt="pdto 02">
             </div>
             <h2 class="texto">Recibidor Eva</h2>
             <p>Recibidor hierro con estante bajo. Medidas: 100 x 28 x 90h cm. Nuestros productos son de fabricación artesanal.
@@ -67,7 +67,7 @@
 
           <article class="product">
             <div class="photo-container">
-              <img class="photo" src="/storage/products/rocks2.jpg" alt="pdto 03">
+              <img class="photo" src="/storage/products/mesarock/mesarock.jpg" alt="pdto 03">
             </div>
             <h2 class="texto">Mesa Rocks Nido</h2>
             <p>Mesas bajas realizadas en chapa 3 mm. Medidas: 48 x 37 x 40h cm. Nuestros productos son de fabricación artesanal. Pintados con pintura al horno en polvo.
@@ -76,7 +76,7 @@
 
           <article class="product">
             <div class="photo-container">
-              <img class="photo" src="/storage/products/trianglemini.jpg" alt="pdto 04">
+              <img class="photo" src="/storage/products/espejotriangle/espejotriangle.jpg" alt="pdto 04">
             </div>
             <h2 class="texto">Espejo Triangle</h2>
             <p>Espejo con marco de planchuela de hierro de 9cm de ancho y 3mm de espesor Medidas 80 x 70 cm. Nuestros productos son de fabricación artesanal. Pintados con pintura al horno en polvo. Colores disponibles base: Negro y Blanco. Otros
