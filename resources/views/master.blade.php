@@ -75,7 +75,7 @@
             </li>
           @endauth
           @guest
-            <li style="margin-left:500px" class="nav-item">
+            <li style="margin-left:450px" class="nav-item">
               <a class="nav-link" href="{{ route('login') }}">Login</a>
             </li>
             </li>
