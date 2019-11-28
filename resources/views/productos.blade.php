@@ -7,7 +7,7 @@
       <section class="">
         @forelse ($products as $product)
           <article class="">
-            <img src="/storage/products/{{$product->featured_img}}" alt=""> --}}
+            <img src="/storage/products/{{$product->featured_img}}" alt="">
             {{-- <img src="/storage/products/{{$product->photos()->get()[0]->image}}" alt=""> --}}
             {{-- @dd($product->photos()->get()) --}}
              <div class="">
