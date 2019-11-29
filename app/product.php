@@ -16,5 +16,7 @@ class product extends Model
      return $this->hasMany('App\ImagesProducts', 'product_id');
    }
 
-
+public function categoria() {
+  return $this->hasOne('App\Categoria', 'categoria_id')
+}
 }
