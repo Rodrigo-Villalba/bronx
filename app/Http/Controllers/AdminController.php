@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Auth;
-
+use App\Product;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -15,10 +15,11 @@ class AdminController extends Controller
     public function index()
     {
       // dd('HOLA');
-        abort_if(auth()->guest() || auth()->user()->rol != 1, 500);
+      abort_if(auth()->guest() || auth()->user()->rol != 1, 500);
 
+      $products = Product::with('categoria')->get();
 
-        return view('/admin');
+      return view('/admin', compact('products'));
     }
 
     /**

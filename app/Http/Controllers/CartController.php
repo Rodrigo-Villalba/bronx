@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\CartItem;
 use App\Product;
 use Auth;
 use Illuminate\Http\Request;
@@ -16,9 +17,13 @@ class CartController extends Controller
      */
     public function index()
     {
-      $cart = Cart::where("user_id", Auth::user()->id)->where("status",0)->get();
+      $cart = Cart::where("user_id", Auth::user()->id)->where("status", 1)->with('items.product')->first();
 
-      return view('cart', compact('cart'));
+      if ($cart != NULL) {
+        return view('cart', compact('cart'));
+      } else {
+        return redirect('/');
+      }
     }
 
     /**
@@ -37,95 +42,117 @@ class CartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $product = Product::find($request->id);
+     public function store(Request $request)
+     {
+         $product = Product::find($request->input('id'));
 
-        $item = new Cart;
-        $item->name = $product->name;
-        $item->description = $product->description;
-        $item->price = $product->price;
-        $item->featured_img = $product->featured_img;
-        $item->cant = 1;
-        $item->user_id = Auth::user()->id;
-        $item->status = 0; //producto no comprado.
+         $cart = Cart::where("user_id", Auth::user()->id)->where("status", 1)->first();
 
-        $item->save();
-        return redirect('/');
-    }
+         if (!isset($cart)) {
+           $cart = new Cart;
+           $cart->user_id = Auth::user()->id;
+           $cart->description = "";
+           $cart->status = 1;
+           $cart->sub_total = 0;
+           $cart->discount = 0;
+           $cart->total = 0;
+         }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Cart $cart)
-    {
-        //
-    }
+         $item = new CartItem;
+         $item->product_id = $product->id;
+         $item->price = $product->price;
+         $item->cant = 1;
+         $item->sub_total = $product->price;
+         $item->discount = 0;
+         $item->total = $product->price;
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Cart $cart)
-    {
-        //
-    }
+         $cart->sub_total += $item->total;
+         $cart->total += $item->total - $cart->discount;
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Cart $cart)
-    {
-        //
-    }
+         $cart->save();
+         $cart->items()->save($item);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Cart $cart)
-    {
-        //
-    }
+         return redirect('cart');
+     }
 
-    public function cartclose(Request $req){
+     /**
+      * Display the specified resource.
+      *
+      * @param  \App\Cart  $cart
+      * @return \Illuminate\Http\Response
+      */
+     public function show(Cart $cart)
+     {
+         //
+     }
 
-      //traigo todos los productos del carrtito del usuario logueado.
-      $items = Cart::where("user_id", Auth::user()->id)->where("status",0)->get();
-      //$cart_number = Cart::max('cart_number') +1;
+     /**
+      * Show the form for editing the specified resource.
+      *
+      * @param  \App\Cart  $cart
+      * @return \Illuminate\Http\Response
+      */
+     public function edit(Cart $cart)
+     {
+         //
+     }
 
-      foreach($items as $item){
-        $item->status = 1;
-        //$item->cart_number = $cart_number;
-        $item->save();
-      }
+     /**
+      * Update the specified resource in storage.
+      *
+      * @param  \Illuminate\Http\Request  $request
+      * @param  \App\Cart  $cart
+      * @return \Illuminate\Http\Response
+      */
+     public function update(Request $request, Cart $cart)
+     {
+         //
+     }
 
-      return redirect('/');
+     /**
+      * Remove the specified resource from storage.
+      *
+      * @param  \App\Cart  $cart
+      * @return \Illuminate\Http\Response
+      */
+     public function destroy(Cart $cart)
+     {
+         //
+     }
 
-    }
+     public function cartclose(Request $req){
 
-    public function history(){
+       $cart = Cart::find($req->input('id'));
 
-      $carts = Cart::where('user_id', Auth::user()->id)
-                    ->where("status",1)->get()
-                    ->groupBy('cart_number'); //todos los nros de carrito del usuario.
+       $cart->status = 0;
 
-      return view('history', compact('carts'));
+       $cart->save();
 
+       return redirect('/');
+     }
 
-    }
+     public function history(){
+       $carts = Cart::where('user_id', Auth::user()->id)
+                     ->orderBy('status')
+                     ->get();
 
+       return view('history', compact('carts'));
+     }
 
+     public function eliminarCarritoItem(Request $req) {
 
-}
+       $cart_item = CartItem::with('cart')->find($req->input('id'));
+
+       $cart = $cart_item->cart;
+
+       $cart->sub_total -= $cart_item->total;
+       $cart->total = $cart->sub_total - $cart->discount;
+
+       $cart_item->delete();
+
+       $cart->save();
+
+       return redirect('cart');
+     }
+
+ }
