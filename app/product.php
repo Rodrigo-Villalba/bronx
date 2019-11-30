@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class product extends Model
+class Product extends Model
 {
   protected $guarded = []; //permitira guardado masivo.
 
@@ -17,6 +17,6 @@ class product extends Model
    }
 
 public function categoria() {
-  return $this->hasOne('App\Categoria', 'categoria_id')
+  return $this->hasOne('App\Categoria', 'categoria_id');
 }
 }

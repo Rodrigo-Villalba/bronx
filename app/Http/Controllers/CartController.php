@@ -103,11 +103,11 @@ class CartController extends Controller
 
       //traigo todos los productos del carrtito del usuario logueado.
       $items = Cart::where("user_id", Auth::user()->id)->where("status",0)->get();
-      $cart_number = Cart::max('cart_number') +1;
+      //$cart_number = Cart::max('cart_number') +1;
 
       foreach($items as $item){
         $item->status = 1;
-        $item->cart_number = $cart_number;
+        //$item->cart_number = $cart_number;
         $item->save();
       }
 
@@ -116,6 +116,7 @@ class CartController extends Controller
     }
 
     public function history(){
+
       $carts = Cart::where('user_id', Auth::user()->id)
                     ->where("status",1)->get()
                     ->groupBy('cart_number'); //todos los nros de carrito del usuario.

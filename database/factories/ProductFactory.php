@@ -14,7 +14,8 @@ $factory->define(Product::class, function (Faker $faker) {
       'description' => $faker->paragraph(3),
       'price' => $faker->randomFloat(2, 2, 8) ,
       'user_id' => 1,
-      // 'user_id' => $faker->numberBetween(1,6),
-      'featured_img' => $faker->image($path, 300, 300, 'fashion', false)// Guarda el archiovo emn el file sistem y guarda el nombre+extensión en la rabla de la base de datos.
+      'category_id' => factory(\App\Categoria::class),
+      'tags' => '2019, summer',
+      'stock' =>$faker->randomDigit(),
   ];
 });

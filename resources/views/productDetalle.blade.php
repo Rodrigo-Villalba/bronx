@@ -4,7 +4,7 @@
 <div class="container">
   <h2>Detalle del producto</h2>
     <article class="">
-      <img src="/storage/products/{{$productDetail->featured_img}}" alt="">
+      <img src="/storage/products/{{$productDetail->photos()->get()[0]->image}}" alt="">
       <div class="">
         <p>Otras fotos</p>
         @forelse ($productDetail->photos()->get() as $photo)
@@ -16,7 +16,12 @@
       <h3>{{$productDetail->name}}</h3>
       <p>{{$productDetail->description}}</p>
       <p>Precio: {{$productDetail->price}}</p>
-      <a href="/cart" class="btn btn-success">Agregar al carrito</a>
+
+      <form role="form" method="post" action="{{action('CartController@store')}}">
+        <input hidden name="id" value="{{$productDetail->id}}">
+        <button class="btn btn-success">Agregar al carrito</buttonart">
+        {{csrf_field()}}
+      </form>
     </article>
 </div>
 @endsection

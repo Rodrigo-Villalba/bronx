@@ -10,9 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route::get('/', function () {
-    //return view('home');
-//});
+
 
 Auth::routes();
 
@@ -21,6 +19,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/productos', 'ProductController@index');
 
 Route::post('/addtocart', 'CartController@store');
+
+Route::post('/remoteFromCart', 'CartController@eliminarCarritoItem');
 
 Route::get('/cart', 'CartController@index')->middleware('auth');
 
@@ -33,15 +33,5 @@ Route::get('/history', 'CartController@history')->middleware('auth');
 Route::get('/admin', 'AdminController@index')->middleware('auth');
 
 Route::post('/crearProducto', 'ProductController@create')->middleware('auth');
+
 Route::get('/formularioCarga', 'ProductController@mostrarFormulario')->middleware('auth');
-
-
-// Route::get('/', 'HomeController@index')->name('home');
-// Route::get('/productos', 'ProductController@show');
-// Route::post('/addtocart', 'CartController@store');
-// Route::get('/cart', 'CartController@index')->middleware('auth');
-// Route::post('/cartclose', 'CartController@cartclose');
-// Route::get('/history', 'CartController@history')->middleware('auth');
-//
-// //Ruta con middleware nuevo: Roles.
-// Route::get('/admin', 'AdminController@index')->middleware('auth')->middleware('roles');
