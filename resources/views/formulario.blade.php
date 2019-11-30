@@ -2,66 +2,53 @@
 
 @section('content')
 
-<form action="/products" method="POST" enctype="multipart/form-data" class="form-horizontal margin-large">
+<br>
+<br>
 
-
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="form-horizontal-text">Name :</label>
-        <div class="uk-form-controls">
-            <input name="name" class="uk-input" id="form-horizontal-text" type="text" placeholder="name">
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="form-horizontal-select">Descriptions :</label>
-        <div class="uk-form-controls">
-        <input name="description" class="uk-input" id="form-horizontal-text" type="text" placeholder="description">
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="form-horizontal-select">Price :</label>
-        <div class="uk-form-controls">
-        <input name="price" class="uk-input" id="form-horizontal-text" type="number" placeholder="price">
-        </div>
-    </div>
-
-
-    </div>
-
-    <div class="form-group row">
-        <div uk-form-custom>
-            <input type="file">
-            <button class="uk-button uk-button-default" type="button" tabindex="-1">Select</button>
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <span class="uk-text-middle"></span>
-        <div uk-form-custom>
-            <input type="file">
-            <span class="uk-link">upload</span>
-        </div>
-    </div>
-
-    <div class="form-group row" uk-margin>
-        <div uk-form-custom="target: true">
-            <input type="file">
-            <input class="uk-input uk-form-width-medium" type="text" placeholder="" disabled>
-        </div>
-        <button class="uk-button uk-button-default">Submit</button>
-    </div>
-
+<form method="POST" action="{{action('ProductController@create')}}" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="name">Nombre</label>
+    <input type="text" class="form-control" name="name" placeholder="Nombre">
+  </div>
+  <div class="form-group">
+    <label for="description">Descripcion</label>
+    <input type="text" class="form-control" name="description" placeholder="Descripcion">
+  </div>
+  <div class="form-group">
+    <label for="category">Categoria</label>
+    <select class="form-control" name="category">
+      <option>Elija una categoria</option>
+      @foreach ($categorias as $categoria)
+        <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+      @endforeach
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="price">Precio</label>
+    <input type="number" class="form-control" name="price" placeholder="Precio">
+  </div>
+  <div class="form-group">
+    <label for="stock">Stock</label>
+    <input type="number" class="form-control" name="stock" placeholder="Stock">
+  </div>
+  <div class="form-group">
+    <label for="imagen1">Imagen 1</label>
+    <input type="file" class="form-control-file" name="imagen1">
+  </div>
+  <div class="form-group">
+    <label for="imagen2">Imagen 2</label>
+    <input type="file" class="form-control-file" name="imagen2">
+  </div>
+  <div class="form-group">
+    <label for="imagen3">Imagen 3</label>
+    <input type="file" class="form-control-file" name="imagen3">
+  </div>
+  <div class="form-group">
+    <label for="imagen4">Imagen 4</label>
+    <input type="file" class="form-control-file" id="imagen4">
+  </div>
+  <button type="submit" class="btn btn-primary">Guardar</button>
+  {{csrf_field()}}
 </form>
-
-
-
-
-
-
-
-
-
-
 
 @endsection

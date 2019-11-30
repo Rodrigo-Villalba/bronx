@@ -2,20 +2,32 @@
 
 @section('content')
 <div class="container">
-  <h2>Mis compras</h2>
-    @forelse ($carts as $cart_number => $cart)
-      <p>Carrito nº: {{$cart_number}}</p>
-      <ul>
-      @forelse ($cart as $item)
-        <li>Producto: {{$item->name}}</li>
-      @empty
-        <p>No hay productos para este carrito.</p>
-      @endforelse
-      </ul>
-    @empty
-      <p>No hay compras.</p>
-    @endforelse
-
-
+  <h2>Mis carritos</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Status</th>
+          <th scope="col">SubTotal</th>
+          <th scope="col">Descuento</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach ($carts as $cart)
+          <tr>
+            <td>
+            @if($cart->status == 0)
+              <span>CERRADO</span>
+            @else
+              <span>ABIERTO</span>
+            @endif
+            </td>
+            <td>{{$cart->sub_total}}</td>
+            <td>{{$cart->discount}}</td>
+            <td>{{$cart->total}}</td>
+          </tr>
+        @endforeach
+      </tbody>
+    </table>
 </div>
 @endsection
