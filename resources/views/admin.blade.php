@@ -15,10 +15,9 @@
         <th scope="col">#</th>
         <th scope="col">Nombre</th>
         <th scope="col">Descripcion</th>
-        <th scope="col">Categoria</th>
         <th scope="col">Precio</th>
         <th scope="col">Stock</th>
-        <th scope="col">#</th>
+        {{-- <th scope="col">Categoria</th> --}}
       </tr>
     </thead>
     <tbody>
@@ -31,7 +30,7 @@
           <td>{{$product->price}}</td>
           <td>{{$product->stock}}</td>
           <td>
-              <a href="{{ url('/productos/' . $product->id) }}" class="btn btn-xs btn-info pull-right">Ver producto</a>
+              <a style="margin-left:100px" href="{{ url('/productos/' . $product->id) }}" class="btn btn-xs btn-info pull-right">Ver producto</a>
           </td>
         </tr>
       @endforeach

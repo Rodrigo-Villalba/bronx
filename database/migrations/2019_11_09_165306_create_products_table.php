@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 100);
-            $table->string('description', 300);
+            $table->string('description', 1000);
             $table->decimal('price', 10, 2);
             $table->bigInteger('user_id')->unsigned();//Deben coinsidir en:
             //1. Data type (ambos deben ser bigInteger (bigIncrements es por detrás bigInteger. Revisen la documentación para bigIncrements.))
