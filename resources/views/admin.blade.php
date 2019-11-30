@@ -15,9 +15,9 @@
         <th scope="col">#</th>
         <th scope="col">Nombre</th>
         <th scope="col">Descripcion</th>
+        <th scope="col">Categoria</th>
         <th scope="col">Precio</th>
         <th scope="col">Stock</th>
-        {{-- <th scope="col">Categoria</th> --}}
       </tr>
     </thead>
     <tbody>
@@ -26,7 +26,7 @@
           <td>{{$product->id}}</td>
           <td>{{$product->name}}</td>
           <td>{{$product->description}}</td>
-          {{-- <td>{{$product->categoria->nombre}}</td> --}}
+          <td>{{$product->categoria->nombre}}</td>
           <td>{{$product->price}}</td>
           <td>{{$product->stock}}</td>
           <td>

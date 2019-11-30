@@ -18,7 +18,7 @@ class AdminController extends Controller
       abort_if(auth()->guest() || auth()->user()->rol != 1, 500);
 
       $products = Product::with('categoria')->get();
-
+      
       return view('/admin', compact('products'));
     }
 
