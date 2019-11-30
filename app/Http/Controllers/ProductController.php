@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Categoria;
+use App\ImagesProducts;
+use Auth;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -25,27 +28,69 @@ class ProductController extends Controller
      */
     public function create(Request $request)
     {
-      $product = new Product;
 
-      $product->name = $request->name;
-      $product->description = $request->description;
-      $product->price = $request->price;
-      $product->user_id = $request->user_id;
-      $product->featured_img = $request->featured_img;
-      // $product->category_id = $request->category_id;
-      // $product->tags = $request->tags;
-      // $product->created_at = $request->created_at;
-      //$product->updated_at = $request->updated_at;
-      // $product->stock = $request->stock;
+      $this->validate($request, [
+        'name' => 'required',
+        'category' => 'required',
+        'price' => 'required|min:1'
+      ]);
 
+      $producto = new Product;
 
-      $product->save();
+      $producto->name = $request->input('name');
+      $producto->description = $request->input('description');
+      $producto->category_id = $request->input('category');
+      $producto->price = $request->input('price');
+      $producto->stock = $request->input('stock');
+      $producto->tags = "";
+      $producto->user_id = Auth::user()->id;
+
+      $producto->save();
+
+      if ($request->file('imagen1') != NULL) {
+        $image_name = time() . $request->file('imagen1')->getClientOriginalName();
+        $path = base_path() . '/public/storage/products';
+        $request->file('imagen1')->move($path,$image_name);
+        $img1 = new ImagesProducts;
+        $img1->image = $image_name;
+        $producto->photos()->save($img1);
+      }
+
+      if ($request->file('imagen2') != NULL) {
+        $image_name = time() . $request->file('imagen2')->getClientOriginalName();
+        $path = base_path() . '/public/storage/products';
+        $request->file('imagen2')->move($path,$image_name);
+        $img2 = new ImagesProducts;
+        $img2->image = $image_name;
+        $producto->photos()->save($img2);
+      }
+
+      if ($request->file('imagen3') != NULL) {
+        $image_name = time() . $request->file('imagen3')->getClientOriginalName();
+        $path = base_path() . '/public/storage/products';
+        $request->file('imagen3')->move($path,$image_name);
+        $img3 = new ImagesProducts;
+        $img3->image = $image_name;
+        $producto->photos()->save($img3);
+      }
+
+      if ($request->file('imagen4') != NULL) {
+        $image_name = time() . $request->file('imagen4')->getClientOriginalName();
+        $path = base_path() . '/public/storage/products';
+        $request->file('imagen4')->move($path,$image_name);
+        $img4 = new ImagesProducts;
+        $img4->image = $image_name;
+        $producto->photos()->save($img4);
+      }
 
       return redirect('/productos');
     }
 
     public function mostrarFormulario(){
-      return view ("formulario");
+
+      $categorias = Categoria::all();
+
+      return view("formulario", compact('categorias'));
     }
 
     /**
