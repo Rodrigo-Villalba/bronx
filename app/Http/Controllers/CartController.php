@@ -45,9 +45,9 @@ class CartController extends Controller
      public function store(Request $request)
      {
 
-        if(auth()->guest()){
-          return redirect('/login');
-        }
+        // if(auth()->guest()){
+        //   return redirect('/login');
+        // }
 
          $product = Product::find($request->input('id'));
 

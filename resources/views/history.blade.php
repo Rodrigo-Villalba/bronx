@@ -23,7 +23,7 @@
               <span>ABIERTO</span>
             @endif
             </td>
-            <td>{{$cart->product_id}}</td>
+            <td>{{$cart->description}}</td>
             <td>{{$cart->sub_total}}</td>
             <td>{{$cart->discount}}</td>
             <td>{{$cart->total}}</td>

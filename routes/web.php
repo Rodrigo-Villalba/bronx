@@ -18,7 +18,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/productos', 'ProductController@index');
 
-Route::post('/addtocart', 'CartController@store');
+Route::post('/addtocart', 'CartController@store')->middleware('auth');
 
 Route::post('/remoteFromCart', 'CartController@eliminarCarritoItem');
 
