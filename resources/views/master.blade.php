@@ -39,10 +39,10 @@
             @endif
             @endauth
             <li class="nav-item">
-              <a class="nav-link" href="productos">
+              <a class="nav-link" href="/productos">
                 Productos
               </a>
-            
+
             </li>
 
             @auth
