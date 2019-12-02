@@ -42,15 +42,7 @@
               <a class="nav-link" href="productos">
                 Productos
               </a>
-              {{-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="productos">Sillas</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="productos">Mesas</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="productos">Sillones</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="productos">Deco</a>
-              </div> --}}
+            
             </li>
 
             @auth
