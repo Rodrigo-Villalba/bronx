@@ -19,6 +19,7 @@
 
       <form role="form" method="post" action="{{action('CartController@store')}}">
         <input hidden name="id" value="{{$productDetail->id}}">
+        <input type="number" name="cant" value="1" placeholder="Cantidad" min="1">
         <button class="btn btn-success">Agregar al carrito</buttonart">
         {{csrf_field()}}
       </form>

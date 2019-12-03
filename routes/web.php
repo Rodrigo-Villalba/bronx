@@ -18,6 +18,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/productos', 'ProductController@index');
 
+Route::get('/searchProductos', 'ProductController@searchProducts');
+
 Route::post('/addtocart', 'CartController@store')->middleware('auth');
 
 Route::post('/remoteFromCart', 'CartController@eliminarCarritoItem');

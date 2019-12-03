@@ -6,12 +6,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <meta charset="utf-8">
 
-      <!-- ESTO ES PARA ICONOS -->
-    {{-- <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/> --}}
 
-    <!-- //////////////// -->
     <title></title>
   </head>
   <body>
@@ -39,19 +34,26 @@
             @endif
             @endauth
             <li class="nav-item">
-              <a class="nav-link" href="/productos">
-                Productos
-              </a>
+              <a class="nav-link" href="/productos">Productos</a>
+            </li>
 
+            <li class="form-horizontal">
+              <form id="search" method="GET" action="{{action('ProductController@searchProducts')}}" >
+                <input name="nombre" type="text" placeholder="      Buscar productos" />
+                <button type="submit" id="submitButton" class="btn btn-primary" style="margin-top:10px;margin-left:50px;">Buscar</button>
+              </form>
+              <!-- <a href="/admin" class="nav-link">Administrador</a> -->
             </li>
 
             @auth
             <li class = "nav-item">
-              <a href="/history" class="nav-link">  Mis compras</a>
+              <a href="/history" class="nav-link" style="
+    margin-left: 30px;
+">  Mis compras</a>
             </li>
 
             <li class="navbar-text">
-              <p style="margin-left:250px" class="bienvenido">Bienvenido <span> {{ Auth::user()->name }}</p>
+              <p style="margin-left:160px" class="bienvenido">Bienvenido <span> {{ Auth::user()->name }}</p>
             </li>
             <li style="margin-left:5px" class = "nav-item">
               <a href="/cart" class="nav-link">Carrito</a>
@@ -175,6 +177,8 @@
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     </div>
   </body>
 </html>

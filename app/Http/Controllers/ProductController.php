@@ -15,12 +15,20 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
       $products = Product::All();
       return view('productos', compact('products'));
     }
 
+    public function searchProducts(Request $request)
+    {
+      $query = $request->query('nombre');
+
+      $products = Product::where('name', 'like', $query . '%')->get();
+
+      return view('productos', compact('products'));
+    }
     /**
      * Show the form for creating a new resource.
      *

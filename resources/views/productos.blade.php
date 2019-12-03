@@ -1,14 +1,18 @@
 @extends('master')
 
 @section('content')
-<div class="container contenedor">
+
   <main>
-  <div class="row justify-content-center">
-      <h2>Listado de productos</h2>
-      <section class="">
-      
+    <br>
+    <br>
+  <div class="container contenedor">
+      <h2 class = "row justify-content-center">Listado de productos</h2>
+      <br>
+      <br>
+      <section class="row justify-content-center">
+     <div class="">
         @forelse ($products as $product)
-          <article class="productos">
+          <article class="">
           <h3>{{$product->name}}</h3>
             <img src="/storage/products/{{$product->photos()->get()[0]->image}}" alt="">
              <div class="">
@@ -19,10 +23,16 @@
                 <p>No hay fotos disponibles para este producto.</p>
               @endforelse
             </div>
-            
+            <br>
+
+
+
             <p>{{$product->description}}</p>
             <p>Precio: {{$product->price}}</p>
             <a href="/productos/{{$product->id}}" class="btn btn-success">Ver producto</a>
+            <br>
+            <br>
+            <br>
             <br>
             <br>
           </article>

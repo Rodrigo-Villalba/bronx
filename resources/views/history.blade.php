@@ -7,7 +7,6 @@
       <thead>
         <tr>
           <th scope="col">Status</th>
-          <th scope="col">Descripción</th>
           <th scope="col">SubTotal</th>
           <th scope="col">Descuento</th>
           <th scope="col">Total</th>
@@ -23,7 +22,6 @@
               <span>ABIERTO</span>
             @endif
             </td>
-            <td>{{$cart->description}}</td>
             <td>{{$cart->sub_total}}</td>
             <td>{{$cart->discount}}</td>
             <td>{{$cart->total}}</td>

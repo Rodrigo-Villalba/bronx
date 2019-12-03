@@ -66,10 +66,10 @@ class CartController extends Controller
          $item = new CartItem;
          $item->product_id = $product->id;
          $item->price = $product->price;
-         $item->cant = 1;
+         $item->cant = $request->input('cant');
          $item->sub_total = $product->price;
          $item->discount = 0;
-         $item->total = $product->price;
+         $item->total = $request->input('cant') * $product->price;
 
          $cart->sub_total += $item->total;
          $cart->total += $item->total - $cart->discount;
