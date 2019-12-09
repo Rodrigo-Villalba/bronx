@@ -7,11 +7,13 @@
       <img src="/storage/products/{{$productDetail->photos()->get()[0]->image}}" alt="">
       <div class="">
         <p>Otras fotos</p>
+
         @forelse ($productDetail->photos()->get() as $photo)
           <img style="width:50px" src="/storage/products/{{$photo->image}}" alt="">
         @empty
           <p>No hay fotos disponibles para este producto.</p>
         @endforelse
+      
       </div>
       <h3>{{$productDetail->name}}</h3>
       <p>{{$productDetail->description}}</p>
