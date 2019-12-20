@@ -45,46 +45,50 @@
 
 
         <!--productos venta-->
-        <section class="vip-products row" alt="Responsive image">
+        <section class="vip-products row">
           <article class="product">
-            <div class="photo-container">
-              <img class="photo" src="/storage/products/sillonfreddy/sillonfreddy.jpg" alt="Responsive image">
+            <div class="photo-container" style="right: 100px">
+             <a href="/productos/10">
+              <img class="photo" src="/storage/products/sillonfreddy/sillonfreddy.jpg" alt="pdto 01">
+             </a>
             </div>
             <h2 class="texto">Sillon Freddy</h2>
-            <p>Sillón Freddy. Fabricación propia. Elegi medidas, color de base y Medidas: 170 x 85 x 65h cm. Nuestros productos son de fabricación artesanal.
+            <p style="margin-right: 10px">Sillón Freddy. Fabricación propia. Elegi medidas, color de base y Medidas: 170 x 85 x 65h cm. Nuestros productos son de fabricación artesanal.
               Pintados con pintura al horno en polvo. Colores disponibles base: Negro y Blanco.Otros colores: Dorado, Cobre Rose, Rosa, Menta, Cielo, Lila, Coral.
               Somos fabricantes! </p>
-            <a href="/productos/10" class="btn btn-success">Ver producto</a>
           </article>
 
           <article class="product">
-            <div class="photo-container">
-              <img class="photo" src="/storage/products/llaveromesh/llaveromesh.jpg" alt="Responsive image">
+            <div class="photo-container" style="right: 100px">
+             <a href="/productos/9">
+              <img class="photo" src="/storage/products/llaveromesh/llaveromesh.jpg" alt="pdto 02">
+             </a>
             </div>
-            <h2 class="texto">Llavero Mesh</h2>
-            <p>Estante para pared. Realizado en varilla de hierro y malla metalica.Pintura electroestatica.Medidas:60 x 15 x 30h cmNuestros productos son de fabricación artesanal.
-              Pintados con pintura al horno en polvo.Coloresdisponibles base: Negro y Blanco.Otros colores: Dorado, Cobre Rose, Rosa, Menta, Cielo, Lila, Coral.</p>
-            <a href="/productos/9" class="btn btn-success">Ver producto</a>
+            <h2 class="texto">Llavero mesh</h2>
+            <p style="margin-right: 10px">Estante para pared. Realizado en varilla de hierro y malla metalica. Medidas:60 x 15 x 30h cm Nuestros productos son de fabricación artesanal.
+              Pintados con pintura al horno en polvo. Colores disponibles base: Negro y Blanco. Otros colores: Dorado, Cobre Rose. Somos Fabricantes!</p>
           </article>
 
           <article class="product">
-            <div class="photo-container">
-              <img class="photo" src="/storage/products/mesarock/mesarock.jpg" alt="Responsive image">
+            <div class="photo-container" style="right: 100px">
+             <a href="/productos/4">
+              <img class="photo" src="/storage/products/mesarock/mesarock.jpg" alt="pdto 03">
+             </a>
             </div>
             <h2 class="texto">Mesa Rocks Nido</h2>
-            <p>Mesas bajas realizadas en chapa 3 mm. Medidas: 48 x 37 x 40h cm. Nuestros productos son de fabricación artesanal. Pintados con pintura al horno en polvo.
+            <p style="margin-right: 10px">Mesas bajas realizadas en chapa 3 mm. Medidas: 48 x 37 x 40h cm. Nuestros productos son de fabricación artesanal. Pintados con pintura al horno en polvo.
               Colores disponibles base: Negro y Blanco. Otros colores: Dorado, Cobre Rose, Rosa, Menta, Cielo, Lila, Coral. Somos Fabricantes! </p>
-            <a href="/productos/4" class="btn btn-success">Ver producto</a>
           </article>
 
           <article class="product">
-            <div class="photo-container">
-              <img class="photo" src="/storage/products/espejotriangle/espejotriangle.jpg" alt="Responsive image">
+            <div class="photo-container" style="right: 100px">
+             <a href="/productos/2">
+              <img class="photo" src="/storage/products/espejotriangle/espejotriangle.jpg" alt="pdto 04">
+             </a>
             </div>
             <h2 class="texto">Espejo Triangle</h2>
-            <p>Espejo con marco de planchuela de hierro de 9cm de ancho y 3mm de espesor Medidas 80 x 70 cm. Nuestros productos son de fabricación artesanal. Pintados con pintura al horno en polvo. Colores disponibles base: Negro y Blanco. Otros
+            <p style="margin-right: 10px">Espejo con marco de planchuela de hierro de 9cm de ancho y 3mm de espesor Medidas 80 x 70 cm. Nuestros productos son de fabricación artesanal. Pintados con pintura al horno en polvo. Colores disponibles base: Negro y Blanco. Otros
               colores: Dorado, Cobre Rose, Rosa, Menta, Cielo, Lila, Coral. Somos Fabricantes! </p>
-            <a href="/productos/2" class="btn btn-success">Ver producto</a>
           </article>
         </section>
 @endsection
